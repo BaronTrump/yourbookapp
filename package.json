@@ -1,0 +1,35 @@
+{
+  "name": "the-book-oracle",
+  "version": "0.1.0",
+  "description": "Desktop app for reading aloud, summarizing, and Q&A on books using local AI.",
+  "main": "main.js",
+  "scripts": {
+    "start": "next start -p 3000",
+    "start:next": "next start -p 3000",
+    "dev": "concurrently \"npm run dev:next\" \"npm run dev:electron\"",
+    "dev:next": "next dev",
+    "dev:electron": "electron .",
+    "build": "next build && electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "@elevenlabs/client": "latest",
+    "@mariozechner/pi-agent-core": "latest",
+    "@mariozechner/pi-ai": "latest",
+    "electron-ollama": "latest",
+    "epub-parser": "^0.2.1",
+    "lancedb": "latest",
+    "langchain": "latest",
+    "ollama": "latest",
+    "pdf-parse-new": "latest",
+    "sherpa-onnx": "latest"
+  },
+  "devDependencies": {
+    "concurrently": "latest",
+    "electron": "latest",
+    "electron-builder": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  }
+}
