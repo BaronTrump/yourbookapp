@@ -17,6 +17,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      - name: Clean electron-builder cache
+        run: rm -rf ~/.cache/electron-builder
       - run: npm run build
       - uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
